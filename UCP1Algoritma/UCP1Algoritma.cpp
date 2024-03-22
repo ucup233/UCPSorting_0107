@@ -16,10 +16,35 @@
 // insertion sort membandingkan elemen yang diuji dengan seluruh elemen dari array secara iteratif/keseluruhan dan langsung memposisikan elemen yang dibandingkan ke posisi urutan yang benar.
 
 //No.4
+#include <iostream>
+using namespace std;
 
+int n, i, j, min_index;
+int yusuf[7];
+
+void input() {
+	while (true) {
+		cout << "Masukkan banyak elemen pada array: ";
+		cin >> n;
+		if (n <= 7) {
+			break;
+		}
+		else {
+			cout << "\nArray dapat mempunyai maksimal 7 elemen\n";
+		}
+	}
+	cout << endl;
+	cout << "================" << endl;
+	cout << "Masukkan elemen array" << endl;
+	cout << "======================" << endl;
+
+	for (int i = 0; i < n; i++) {
+		cout << "=========================" << endl;
+		cin >> yusuf[i];
+	}
+}
 void Algoritma() {
-	int n,i,j,min_index;
-	int yusuf[7];
+	
 	for (j = 0; j <= n - 2; j++) {
 		do (yusuf[j] <= yusuf[n - 1]) {
 			min_index = j;
@@ -33,3 +58,22 @@ void Algoritma() {
 	}while (j <= n - 2);
 }
 
+void display() {
+	cout << endl;
+	cout << "====================" << endl;
+	cout << "Elemen paling kecil" << endl;
+	cout << "====================" << endl;
+	for (int j = 0; j < n; j++) {
+		cout << yusuf[min_index] << endl;
+	}
+}
+
+
+int main() {
+	input();
+	Algoritma();
+	display();
+	system("pause");
+
+	return 0;
+}
